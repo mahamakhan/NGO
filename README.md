@@ -25,6 +25,7 @@
 ### **_Technologies Used_**
 - Django
 - Vue.js
+- Postgres
 
 ---
 ### **_Screenshots_**

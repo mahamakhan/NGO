@@ -9,13 +9,13 @@
 ---
 
 ### **_Project Management_**
-#### [ERD](https://app.diagrams.net/#G1j2_thImyaYARksdwc7nsi91IIZhg4IqA)
+#### [ERD](https://drive.google.com/file/d/1j2_thImyaYARksdwc7nsi91IIZhg4IqA/view?usp=sharing)
 #### [Trello](https://trello.com/b/UXMspA9m/ngo)
-#### [CHD](https://app.diagrams.net/#G1e39UerYn0GRhvoiyoMu2pj3mr9o8ag_r)
+#### [CHD](https://drive.google.com/file/d/1e39UerYn0GRhvoiyoMu2pj3mr9o8ag_r/view?usp=sharing)
 
 ---
 ### **_Description_**
-#### List of NGO to give charity or zakat to
+#### List of NGO to give charity or zakat to. 
 #### 
 
 ### **_Getting Started_**
@@ -30,10 +30,10 @@
 ---
 ### **_Screenshots_**
 #### Image 1
-
+![Image1](img.png.png)
 
 #### Image2
-
+![Image1](img1.png.png)
 
 #### Image 3
 

@@ -10,7 +10,7 @@ class NgoSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = NgoList
-       fields = ('name','country','zakat_eligible',)
+       fields = ('__all__')
 
 
 class DonationsSerializer(serializers.HyperlinkedModelSerializer):

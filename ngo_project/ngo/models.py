@@ -4,8 +4,10 @@ from django.db import models
 class NgoList(models.Model):
     name=models.CharField(max_length=100)
     country=models.CharField(max_length=120)
-    zakat_eligible=models.BooleanField()
-    
+    city=models.CharField(max_length=120, null=True)
+    profit=models.BooleanField(null=True)
+    international=models.BooleanField(null=True)
+    email=models.CharField(max_length=120, null=True)
 
     def __str__(self):
             return self.name

@@ -1,14 +1,19 @@
 <template>
 
 <div>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <header>
+     <NavBar/>
+    </header>
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+   <main>
+      <router-view></router-view>
   <BankAccount/>
   <DonationsPage/>
   <HomePage/>
   <OneDonation/>
   <OneNgo/>
-  <NavBar/>
   <NgoList/>
+</main>
 </div>
 </template>
 
@@ -43,5 +48,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
 }
 </style>

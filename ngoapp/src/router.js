@@ -1,10 +1,10 @@
 import { createWebHistory, createRouter } from "vue-router"
-import DonationsPage from './components'
-import BankAccount from './components'
-import NgoList from './components'
-import HomePage from './components'
+import DonationsPage from './components/DonationsPage.vue'
+import BankAccount from './components/BankAccount.vue'
+import NgoList from './components/NgoList.vue'
+import HomePage from './components/HomePage.vue'
 import OneNgo from'./components/OneNgo.vue'
-import OneDonation from './components'
+import OneDonation from './components/OneDonation.vue'
 
 
 

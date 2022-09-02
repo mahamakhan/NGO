@@ -11,7 +11,7 @@ class NgoList(models.Model):
             return self.name
 
 class Donations(models.Model):
-    ngo_list=models.ForeignKey(NgoList(), on_delete=models.CASCADE, related_name='donations')
+    ngo_list=models.ForeignKey(NgoList, on_delete=models.CASCADE, related_name='donations')
     name=models.CharField(max_length=100)
     title=models.CharField(max_length=100)
     typeof=models.CharField(max_length=100)
@@ -22,7 +22,7 @@ class Donations(models.Model):
         return self.name
 
 class BankAccount(models.Model):
-    donation=models.ForeignKey(Donations(), on_delete=models.CASCADE, related_name='bank_account')
+    donation=models.ForeignKey(Donations, on_delete=models.CASCADE, related_name='bank_account')
     name=models.CharField(max_length=100)
     number=models.IntegerField()
     iban=models.IntegerField()

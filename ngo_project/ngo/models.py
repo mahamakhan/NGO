@@ -12,8 +12,18 @@ class NgoList(models.Model):
     def __str__(self):
             return self.name
 
+class BankAccount(models.Model):
+    name=models.CharField(max_length=100)
+    number=models.CharField(max_length=100)
+    iban=models.CharField(max_length=100)
+    
+
+    def __str__(self):
+         return self.name
+
 class Donations(models.Model):
     ngo_list=models.ForeignKey(NgoList, on_delete=models.CASCADE, related_name='donations')
+    bank=models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name='donations', null=True)
     name=models.CharField(max_length=100)
     title=models.CharField(max_length=100)
     typeof=models.CharField(max_length=100)
@@ -23,12 +33,3 @@ class Donations(models.Model):
     def __str__(self):
         return self.name
 
-class BankAccount(models.Model):
-    donation=models.ForeignKey(Donations, on_delete=models.CASCADE, related_name='bank_account')
-    name=models.CharField(max_length=100)
-    number=models.CharField(max_length=100)
-    iban=models.CharField(max_length=100)
-    
-
-    def __str__(self):
-         return self.name

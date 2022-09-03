@@ -13,7 +13,7 @@
   
   <script>
     import axios from 'axios'
-    import BASE_URL from '../globals'
+    // import BASE_URL from '../globals'
     export default {
       name: 'NgoList',
       data: () =>({
@@ -24,7 +24,7 @@
       },
       methods:{
         async getlist(){
-          const res= await axios.get(`${BASE_URL}/ngolist`)
+          const res= await axios.get('http://127.0.0.1:8000/ngolist')
           this.list=res.data
           console.log(res.data+ 'getlist')
         }

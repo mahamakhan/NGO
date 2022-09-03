@@ -10,7 +10,7 @@ class NgoSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = NgoList
-       fields = ('__all__')
+       fields = ('name','country','city','profit','international','email','donations')
 
 
 class DonationsSerializer(serializers.HyperlinkedModelSerializer):
@@ -31,4 +31,4 @@ class BankSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = BankAccount
-       fields = ( 'iban', 'number', 'name', 'donation',)
+       fields = ( 'iban', 'number', 'name', 'donations',)

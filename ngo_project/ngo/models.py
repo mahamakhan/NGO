@@ -26,8 +26,8 @@ class Donations(models.Model):
 class BankAccount(models.Model):
     donation=models.ForeignKey(Donations, on_delete=models.CASCADE, related_name='bank_account')
     name=models.CharField(max_length=100)
-    number=models.IntegerField()
-    iban=models.IntegerField()
+    number=models.CharField(max_length=100)
+    iban=models.CharField(max_length=100)
     
 
     def __str__(self):

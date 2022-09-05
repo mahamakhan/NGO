@@ -6,6 +6,7 @@
   
   <script>
     import axios from 'axios'
+    import { BASE_URL } from '@/globals';
     export default {
       name: 'DonationsPage',
       data: () =>({
@@ -16,7 +17,7 @@
       },
       methods:{
         async getDonations(){
-          const res= await axios.get('http://127.0.0.1:8000/donations/')
+          const res= await axios.get(`${BASE_URL}/donations/`)
           this.donations=res.data
           console.log(res.data+ 'getDonations')
         }

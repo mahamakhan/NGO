@@ -6,6 +6,7 @@
   
   <script>
     import axios from 'axios'
+    import { BASE_URL } from '@/globals';
     export default {
       name: 'BankAccount',
       data: () =>({
@@ -16,7 +17,7 @@
       },
       methods:{
         async getbank(){
-          const res= await axios.get('http://127.0.0.1:8000/bankaccount/')
+          const res= await axios.get(`${BASE_URL}/bankaccount/`)
           this.bank=res.data
           console.log(res.data+ 'getbank')
         }

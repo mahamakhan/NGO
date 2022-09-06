@@ -10,7 +10,7 @@
     </div>
     
     <div>
-          <form>
+          <form @submit="addDonation">
             <label>Name</label>
             <input placeholder="name" value='name'  @input='handleChange'/>
             <label>Title</label>
@@ -19,7 +19,7 @@
             <input placeholder="type" value='type'  @input='handleChange'/>
             <label>Description</label>
             <input placeholder="description" value='description'  @input='handleChange'/>
-            <button @submit="addDonation">Add</button>
+            <button>Add</button>
             </form>
         </div>
   </template>
@@ -49,6 +49,7 @@
       async addDonation(){
         const res=await axios.post(`${BASE_URL}/donations/`)
         console.log(res.data)
+        this.form=res.data
       },
       handleChange(event) {
           this.form=event.target.value

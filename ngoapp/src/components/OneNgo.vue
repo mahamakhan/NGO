@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h1>NGO</h1>
-        <!-- <h2>{{list.name}}</h2>
+        <!-- <h1>NGO</h1> -->
+        <h2>{{list.name}}</h2>
           <h2>{{list.country}}</h2>
           <h2>{{list.city}}</h2>
           <h2>{{list.profit}}</h2>
           <h2>{{list.international}}</h2>
-          <h2>{{list.email}}</h2> -->
+          <h2>{{list.email}}</h2>
     </div>
   </template>
   

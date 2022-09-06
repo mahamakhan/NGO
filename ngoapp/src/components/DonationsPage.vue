@@ -3,10 +3,7 @@
         <h1>Donations</h1>
     </div>
     <div v-for="donation in donations" :key="donation.id" @click='selectdonation(donation.id)'>
-    <h2>{{donation.name}}</h2>
-    <h2>{{donation.title}}</h2>
-    <h2>{{donation.typeof}}</h2>
-    <h2>{{donation.description}}</h2>
+      <OneDonation :donation='donation'/>
     </div>
     
     <div>
@@ -27,6 +24,7 @@
   <script>
     import axios from 'axios'
     import { BASE_URL } from '@/globals';
+import OneDonation from './OneDonation.vue';
     export default {
     name: "DonationsPage",
     data: () => ({
@@ -42,8 +40,9 @@
             console.log(res.data + "getDonations");
         }
     },
-    selectdonation(donationsid) {
-        this.$router.push(`/donations/${donationsid}`);
-    }
+    selectdonation(donationid) {
+        this.$router.push(`/donations/${donationid}`);
+    },
+    components: { OneDonation }
 }
   </script>

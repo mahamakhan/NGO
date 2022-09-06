@@ -31,8 +31,8 @@ import axios from 'axios';
           const donId=parseInt(this.$route.params.donations_id)
           const res= await axios.delete(`${BASE_URL}/donations/${donId}`)
           console.log(res.data)
-          
-        },
+          this.$router.push('/donations/');
+        }
       },
       mounted : async function(){
         await this.getDonationDets()

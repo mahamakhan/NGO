@@ -12,14 +12,14 @@
     <div>
           <form>
             <label>Name</label>
-            <input placeholder="name" value='name'/>
+            <input placeholder="name" value='name'  @input='handleChange'/>
             <label>Title</label>
-            <input placeholder="title" value='title'/>
+            <input placeholder="title" value='title'  @input='handleChange'/>
             <label>Type</label>
-            <input placeholder="type" value='type'/>
+            <input placeholder="type" value='type'  @input='handleChange'/>
             <label>Description</label>
-            <input placeholder="description" value='description'/>
-            <button>Add</button>
+            <input placeholder="description" value='description'  @input='handleChange'/>
+            <button @submit="addDonation">Add</button>
             </form>
         </div>
   </template>
@@ -31,7 +31,8 @@
     export default {
     name: "DonationsPage",
     data: () => ({
-        donations: []
+        donations: [],
+        form:{}
     }),
     mounted: async function () {
         await this.getDonations();
@@ -44,7 +45,15 @@
         },
         selectdonation(donationid) {
         this.$router.push(`/donations/${donationid}`);
-    }
+    },
+      async addDonation(){
+        const res=await axios.post(`${BASE_URL}/donations/`)
+        console.log(res.data)
+      },
+      handleChange(event) {
+          this.form=event.target.value
+           
+        },
     }
 }
   </script>

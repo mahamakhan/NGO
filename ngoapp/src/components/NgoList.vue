@@ -1,8 +1,14 @@
 <template>
     <div>
         <h1>NGO LIST</h1>
-        <div v-for="list in list" :key="list.id">
-          <OneNgo :list='list' @click='selectngo(list.id)'/>
+        <div v-for="list in list" :key="list.id" @click='selectngo(list.id)'>
+         <h2>{{list.name}}</h2>
+          <h2>{{list.country}}</h2>
+          <h2>{{list.city}}</h2>
+          <h2>{{list.profit}}</h2>
+          <h2>{{list.international}}</h2>
+          <h2>{{list.email}}</h2>
+          <!-- <OneNgo :list='list' /> -->
         </div>
         <div>
           <form>
@@ -27,7 +33,7 @@
   <script>
     import axios from 'axios'
     import { BASE_URL } from '@/globals';
-import OneNgo from './OneNgo.vue';
+// import OneNgo from './OneNgo.vue';
     export default {
     name: "NgoList",
     data: () => ({
@@ -46,7 +52,7 @@ import OneNgo from './OneNgo.vue';
         this.$router.push(`/ngolist/${listid}`)
     }
     },
-    components: { OneNgo },
+    // components: { OneNgo },
     
 }
   </script>

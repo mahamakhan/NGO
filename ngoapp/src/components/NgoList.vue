@@ -1,10 +1,21 @@
 <template>
     <div>
         <h1>NGO LIST</h1>
+        <div v-for="list in list" :key="list.id">
+          <h2>{{list.name}}</h2>
+          <h2>{{list.country}}</h2>
+          <h2>{{list.city}}</h2>
+          <h2>{{list.profit}}</h2>
+          <h2>{{list.international}}</h2>
+          <h2>{{list.email}}</h2>
+        </div>
         <div>
           <form>
             <input placeholder="Name"/>
             <input placeholder="Country"/>
+            <input placeholder="email"/>
+            <input placeholder="international" type='radio'/>
+            <input placeholder="profit/nonprofit" type='radio'/>
             <button>Add</button>
             </form>
         </div>

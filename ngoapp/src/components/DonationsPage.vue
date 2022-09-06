@@ -2,6 +2,12 @@
     <div>
         <h1>Donations</h1>
     </div>
+    <div v-for="donation in donations" :key="donation.id">
+    <h2>{{donation.name}}</h2>
+    <h2>{{donation.title}}</h2>
+    <h2>{{donation.typeof}}</h2>
+    <h2>{{donation.description}}</h2>
+    </div>
   </template>
   
   <script>

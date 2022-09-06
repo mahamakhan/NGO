@@ -3,7 +3,7 @@
         <h1>Donations</h1>
     </div>
     <div v-for="donation in donations" :key="donation.id" @click='selectdonation(donation.id)'>
-      <OneDonation :donation='donation'/>
+      <OneDonation :donation='donation' />
     </div>
     
     <div>
@@ -38,11 +38,12 @@ import OneDonation from './OneDonation.vue';
             const res = await axios.get(`${BASE_URL}/donations/`);
             this.donations = res.data;
             console.log(res.data + "getDonations");
-        }
-    },
-    selectdonation(donationid) {
+        },
+        selectdonation(donationid) {
         this.$router.push(`/donations/${donationid}`);
     },
+    },
+    
     components: { OneDonation }
 }
   </script>

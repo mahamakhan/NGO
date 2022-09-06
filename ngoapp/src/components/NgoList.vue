@@ -2,7 +2,7 @@
     <div>
         <h1>NGO LIST</h1>
         <div v-for="list in list" :key="list.id">
-          <OneNgo :list='list'/>
+          <OneNgo :list='list' @click='selectngo(list.id)'/>
         </div>
         <div>
           <form>
@@ -41,8 +41,12 @@ import OneNgo from './OneNgo.vue';
             const res = await axios.get(`${BASE_URL}/ngolist/`);
             this.list = res.data;
             console.log(res.data + "getlist");
-        }
+        },
+        selectngo(listid){
+        this.$router.push(`/ngolist/${listid}`)
+    }
     },
-    components: { OneNgo }
+    components: { OneNgo },
+    
 }
   </script>

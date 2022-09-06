@@ -14,7 +14,7 @@ const routes = [
     { path: '/bankaccount', component: BankAccount, name: 'BankAccount' },
     { path: '/ngolist', component: NgoList, name: 'NgoList' },
     { path: '/donations/:donations_id', component: OneDonation, name: 'OneDonation' },
-    { path: '/ngolist/:ngolist_id', component: OneNgo, name: 'OneNgo' }
+    { path: '/ngolist/:list_id', component: OneNgo, name: 'OneNgo' }
 
 
   ]

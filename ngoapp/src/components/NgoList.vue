@@ -11,10 +11,17 @@
         </div>
         <div>
           <form>
+            <label>Name of Your NGO</label>
             <input placeholder="Name"/>
+            <label>Country</label>
             <input placeholder="Country"/>
+            <label>City</label>
+            <input placeholder="city"/>
+            <label>Email to contact</label>
             <input placeholder="email"/>
+            <label>Is it International?</label>
             <input placeholder="international" type='radio'/>
+            <label>Is it a non-profit NGO?</label>
             <input placeholder="profit/nonprofit" type='radio'/>
             <button>Add</button>
             </form>

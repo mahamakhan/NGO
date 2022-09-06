@@ -12,13 +12,13 @@
     <div>
           <form @submit="addDonation">
             <label>Name</label>
-            <input placeholder="name" value='name'  @input='handleChange'/>
+            <input placeholder="name" v-model='name'  @input='handleChange'/>
             <label>Title</label>
-            <input placeholder="title" value='title'  @input='handleChange'/>
+            <input placeholder="title" v-model='title'  @input='handleChange'/>
             <label>Type</label>
-            <input placeholder="type" value='type'  @input='handleChange'/>
+            <input placeholder="type" v-model='type'  @input='handleChange'/>
             <label>Description</label>
-            <input placeholder="description" value='description'  @input='handleChange'/>
+            <input placeholder="description" v-model='description' @input='handleChange' />
             <button>Add</button>
             </form>
         </div>
@@ -32,7 +32,12 @@
     name: "DonationsPage",
     data: () => ({
         donations: [],
-        form:{}
+        
+          name:'',
+          title:'',
+          type:'',
+          description:''
+        
     }),
     mounted: async function () {
         await this.getDonations();
@@ -47,9 +52,16 @@
         this.$router.push(`/donations/${donationid}`);
     },
       async addDonation(){
-        const res=await axios.post(`${BASE_URL}/donations/`)
+        const res=await axios.post(`${BASE_URL}/donations/`,
+        {
+          name:this.name,
+          title:this.title,
+          type:this.type,
+          description:this.description
+        })
         console.log(res.data)
-        this.form=res.data
+        console.log('clicked')
+        // this.form=res.data
       },
       handleChange(event) {
           this.form=event.target.value

@@ -12,17 +12,17 @@
         <div>
           <form>
             <label>Name of Your NGO</label>
-            <input placeholder="Name"/>
+            <input placeholder="Name" vale='name'/>
             <label>Country</label>
-            <input placeholder="Country"/>
+            <input placeholder="Country" value='country'/>
             <label>City</label>
-            <input placeholder="city"/>
+            <input placeholder="city" value='city'/>
             <label>Email to contact</label>
-            <input placeholder="email"/>
+            <input placeholder="email" value='email'/>
             <label>Is it International?</label>
-            <input placeholder="international" type='radio'/>
+            <input placeholder="international" type='radio' value='international'/>
             <label>Is it a non-profit NGO?</label>
-            <input placeholder="profit/nonprofit" type='radio'/>
+            <input placeholder="profit/nonprofit" type='radio' value='profit'/>
             <button>Add</button>
             </form>
         </div>

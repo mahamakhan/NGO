@@ -11,19 +11,19 @@
           <!-- <OneNgo :list='list' /> -->
         </div>
         <div>
-          <form>
+          <form @submit="createlist">
             <label>Name of Your NGO</label>
-            <input placeholder="Name" vale='name'/>
+            <input placeholder="Name" v-model='newlist.name'/>
             <label>Country</label>
-            <input placeholder="Country" value='country'/>
+            <input placeholder="Country" v-model='newlist.country'/>
             <label>City</label>
-            <input placeholder="city" value='city'/>
+            <input placeholder="city" v-model='newlist.city'/>
             <label>Email to contact</label>
-            <input placeholder="email" value='email'/>
+            <input placeholder="email" v-model='newlist.email'/>
             <label>Is it International?</label>
-            <input placeholder="international" type='radio' value='international'/>
+            <input placeholder="international"  v-model='newlist.international'/>
             <label>Is it a non-profit NGO?</label>
-            <input placeholder="profit/nonprofit" type='radio' value='profit'/>
+            <input placeholder="profit/nonprofit"  v-model='newlist.profit'/>
             <button>Add</button>
             </form>
         </div>
@@ -37,7 +37,16 @@
     export default {
     name: "NgoList",
     data: () => ({
-        list: []
+        list: [],
+          newlist:{
+                name:'',
+                country:'',
+                city:'',
+                email:'',
+                international:'',
+                profit:''
+          }
+        
     }),
     mounted: async function () {
         await this.getlist();
@@ -50,9 +59,19 @@
         },
         selectngo(listid){
         this.$router.push(`/ngolist/${listid}`)
-    }
     },
+         async createlist() {
+         await axios.post(`${BASE_URL}/ngolist/`,
+            this.newlist).then(
+        response => {
+          this. newlist= response.data;
+          this.list.push(response.data);
+        }
+      );
+    }
+            // console.log(res.data + "create")
+            // console.log(this.newlist.name)
+    }
     // components: { OneNgo },
-    
-}
+    }    
   </script>

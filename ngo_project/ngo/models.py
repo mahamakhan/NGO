@@ -5,8 +5,8 @@ class NgoList(models.Model):
     name=models.CharField(max_length=100)
     country=models.CharField(max_length=120)
     city=models.CharField(max_length=120, null=True)
-    profit=models.BooleanField(null=True)
-    international=models.BooleanField(null=True)
+    profit=models.CharField(max_length=120, null=True)
+    international=models.CharField(max_length=120, null=True)
     email=models.CharField(max_length=120, null=True)
 
     def __str__(self):

@@ -15,6 +15,7 @@ class NgoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = NgoList.objects.all()
     serializer_class = NgoSerializer
 
+
 class DonationsList(generics.ListCreateAPIView):
     queryset = Donations.objects.all()
     serializer_class = DonationsSerializer
@@ -22,6 +23,7 @@ class DonationsList(generics.ListCreateAPIView):
 class DonationsDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Donations.objects.all()
     serializer_class = DonationsSerializer
+    
 
 class BankList(generics.ListCreateAPIView):
     queryset = BankAccount.objects.all()

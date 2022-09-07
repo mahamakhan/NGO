@@ -10,8 +10,8 @@
             <input placeholder="Name" v-model='newlist.name'/>
             <label>Country</label>
             <input placeholder="Country" v-model='newlist.country'/>
-            <label>City</label>
-            <input placeholder="city" v-model='newlist.city'/>
+            <label>Founded</label>
+            <input placeholder="founded" v-model='newlist.founded'/>
             <label>Email to contact</label>
             <input placeholder="email" v-model='newlist.email'/>
             <label>Is it International?</label>
@@ -35,7 +35,7 @@
       newlist:{
                 name:'',
                 country:'',
-                city:'',
+                founded:'',
                 email:'',
                 international:'',
                 profit:''

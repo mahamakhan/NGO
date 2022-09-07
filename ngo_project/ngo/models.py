@@ -4,7 +4,7 @@ from django.db import models
 class NgoList(models.Model):
     name=models.CharField(max_length=100)
     country=models.CharField(max_length=120)
-    city=models.CharField(max_length=120, null=True)
+    founded=models.CharField(max_length=120, null=True)
     profit=models.CharField(max_length=120, null=True)
     international=models.CharField(max_length=120, null=True)
     email=models.CharField(max_length=120, null=True)
@@ -27,7 +27,7 @@ class Donations(models.Model):
     name=models.CharField(max_length=100)
     title=models.CharField(max_length=100)
     typeof=models.CharField(max_length=100)
-    description=models.CharField(max_length=400)
+    description=models.CharField(max_length=1000)
     
 
     def __str__(self):

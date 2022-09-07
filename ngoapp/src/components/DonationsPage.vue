@@ -4,7 +4,7 @@
     </div>
     <div v-for="donation in donations" :key="donation.id" >
       <h2 @click='selectdonation(donation.id)'>{{donation.name}}</h2>
-      <h2>{{donation.title}}</h2>
+      <img :src='donation.title'/>
       <h2>{{donation.typeof}}</h2>
       <h2>{{donation.description}}</h2>
       <button @click="gotobank()">Donate</button>

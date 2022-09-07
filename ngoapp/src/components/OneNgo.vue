@@ -1,8 +1,11 @@
 <template>
+  <div>
     <div>
         <!-- <h1>NGO</h1> -->
         <h2>{{ngoDetails.name}}</h2>
-        <form @submit="changelist">
+    </div>
+    <div>
+      <form @submit="changelist">
             <label>Name of Your NGO</label>
             <input placeholder="Name" v-model='newlist.name'/>
             <label>Country</label>
@@ -15,9 +18,10 @@
             <input placeholder="international"  v-model='newlist.international'/>
             <label>Is it a non-profit NGO?</label>
             <input placeholder="profit/nonprofit"  v-model='newlist.profit'/>
-            <button>Edit</button>
+            <button>Add</button>
             </form>
     </div>
+  </div>
   </template>
   
   <script>
@@ -25,11 +29,17 @@
     import { BASE_URL } from '@/globals';
     export default {
       name: 'OneNgo',
-      props:{
-        list:{}
-      },
+      
       data: () => ({
-      ngoDetails: {}
+      ngoDetails: {},
+      newlist:{
+                name:'',
+                country:'',
+                city:'',
+                email:'',
+                international:'',
+                profit:''
+          }
     }),
     mounted: async function() {
       await this.getngoDetails()
@@ -44,7 +54,10 @@
       },
       async changelist(){
         const ngoId= parseInt(this.$route.params.list_id)
-        await axios.put(`${BASE_URL}/ngolist/${ngoId}`)
+        await axios.put(`${BASE_URL}/ngolist/${ngoId}`,this.newlist).then(
+        response => {
+        this. newlist= response.data;
+          console.log(this.newlist)})
       }
     }
       

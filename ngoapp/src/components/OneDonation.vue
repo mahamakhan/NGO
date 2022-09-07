@@ -5,6 +5,7 @@
      <h2>{{donation.title}}</h2>
       <h2>{{donation.typeof}}</h2>
       <h2>{{donation.description}}</h2>
+      
       <form @submit="changeDonation">
             <label>Name</label>
             <input placeholder="name" v-model='name'  @input='handleChange'/>
@@ -26,33 +27,35 @@ import { BASE_URL } from '@/globals';
 import axios from 'axios';
 
 
+
     export default {
-      name: 'OneDonation',
-      data:()=>({
-        donation:{}
-      }),
-      methods:{
-        async getDonationDets(){
-          const donId=parseInt(this.$route.params.donations_id)
-          const res= await axios.get(`${BASE_URL}/donations/${donId}`)
-          console.log(res.data)
-          this.donation=res.data
+    name: "OneDonation",
+    data: () => ({
+        donation: {}
+    }),
+    methods: {
+        async getDonationDets() {
+            const donId = parseInt(this.$route.params.donations_id);
+            const res = await axios.get(`${BASE_URL}/donations/${donId}`);
+            console.log(res.data);
+            this.donation = res.data;
         },
-        async deleteDonation(){
-          const donId=parseInt(this.$route.params.donations_id)
-          const res= await axios.delete(`${BASE_URL}/donations/${donId}`)
-          console.log(res.data)
-          this.$router.push('/donations/');
+        async deleteDonation() {
+            const donId = parseInt(this.$route.params.donations_id);
+            const res = await axios.delete(`${BASE_URL}/donations/${donId}`);
+            console.log(res.data);
+            this.$router.push("/donations/");
         },
-        async changeDonation(){
-          const donId=parseInt(this.$route.params.donations_id)
-          const res= await axios.put(`${BASE_URL}/donations/${donId}`)
-        console.log(res)
-        //this.form=res.data
-      },
-      },
-      mounted : async function(){
-        await this.getDonationDets()
-      }
+        async changeDonation() {
+            const donId = parseInt(this.$route.params.donations_id);
+            const res = await axios.put(`${BASE_URL}/donations/${donId}`);
+            console.log(res);
+            //this.form=res.data
+        }
+        
+    },
+    mounted: async function () {
+        await this.getDonationDets();
     }
+}
   </script>

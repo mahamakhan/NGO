@@ -1,6 +1,6 @@
 <template>
 
-<div>
+<div id="app">
   <header>
      <NavBar/>
     </header>
@@ -17,7 +17,7 @@
 </div>
 </template>
 
-<script>
+<script type="text/javascript">
 // import BankAccount from './components/BankAccount.vue';
 // import DonationsPage from './components/DonationsPage.vue';
 // import HomePage from './components/HomePage.vue';

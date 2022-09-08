@@ -5,9 +5,10 @@
          <h2>{{list.name}}</h2>
           <h2>{{list.country}}</h2>
           <h2>{{list.founded}}</h2>
-          <h2>{{list.profit}}</h2>
+          <video :src='list.profit'/>
           <h2>{{list.international}}</h2>
           <h2>{{list.email}}</h2>
+          
           <!-- <OneNgo :list='list' /> -->
         </div>
         <div>
@@ -33,6 +34,9 @@
   <script>
     import axios from 'axios'
     import { BASE_URL } from '@/globals';
+    // import Embed from 'v-video-embed'
+    // import  Vue from 'vue';
+    
 // import OneNgo from './OneNgo.vue';
     export default {
     name: "NgoList",

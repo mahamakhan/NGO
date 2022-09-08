@@ -1,12 +1,12 @@
 <template>
-    <div>
-      <nav><h1>Nav</h1></nav>
+    <div class="flex flex-wrap w-full mt-0">
+     
         
         <nav>
-          <ul>
-     <li><router-link to="/">About</router-link></li>
-    <li><router-link to="/donations">Donations</router-link></li>
-  <li><router-link to="/ngolist">List of NGOs</router-link></li>
+          <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row mt-0">
+     <li class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-orange-600 bg-orange-200 uppercase last:mr-0 mr-1"><router-link to="/">About</router-link></li>
+    <li class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-orange-600 bg-orange-200 uppercase last:mr-0 mr-1"><router-link to="/donations">Donations</router-link></li>
+  <li class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-orange-600 bg-orange-200 uppercase last:mr-0 mr-1"><router-link to="/ngolist">List of NGOs</router-link></li>
 </ul>
   </nav> 
     </div>

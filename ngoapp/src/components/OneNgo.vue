@@ -3,8 +3,14 @@
     <div>
         <!-- <h1>NGO</h1> -->
         <h2>{{ngoDetails.name}}</h2>
+        <h2>{{ngoDetails.name}}</h2>
+          <h2>{{ngoDetails.country}}</h2>
+          <h2>{{ngoDetails.founded}}</h2>
+          <h2>{{ngoDetails.international}}</h2>
+          <h2>{{ngoDetails.email}}</h2>
     </div>
     <div>
+      <h1>Add You Ngo</h1>
       <form @submit="changelist">
             <label>Name of Your NGO</label>
             <input placeholder="Name" v-model='newlist.name'/>

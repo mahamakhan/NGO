@@ -1,17 +1,25 @@
 <template>
+  <div class="bg-cover bg-gradient-to-r from-rose-400 via-red-500 to-rose-500">
     <div>
-        <h1>NGO LIST</h1>
-        <div v-for="list in list" :key="list.id" @click='selectngo(list.id)'>
-         <h2>{{list.name}}</h2>
-          <h2>{{list.country}}</h2>
-          <h2>{{list.founded}}</h2>
-          <video :src='list.profit'/>
-          <h2>{{list.international}}</h2>
-          <h2>{{list.email}}</h2>
-          
+        <h1 class="text-5xl font-normal leading-normal mt-0 mb-2 text-white">NGO LIST</h1>
+        <div v-for="list in list" :key="list.id" @click='selectngo(list.id)' class="py-12">
+         <h2 class="text-5xl font-normal leading-normal mt-0 mb-2 text-white py-10">{{list.name}}</h2>
+         <!-- <video :src='list.profit'/> -->
+         <div class="flex flex-row">
+         <div>
+         <iframe width="560" height="315" :src='list.profit' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> 
+        <div class="grow">
+         <h2  class="text-center text-2xl font-normal leading-normal mt-0 mb-2 text-white ">{{list.country}}</h2>
+          <h2  class="text-center text-2xl font-normal leading-normal mt-0 mb-2 text-white">{{list.founded}}</h2>
+          <h2  class="text-center text-2xl font-normal leading-normal mt-0 mb-2 text-white">{{list.international}}</h2>
+          <h2 class="text-center text-2xl font-normal leading-normal mt-0 mb-2 text-white">{{list.email}}</h2>
+        </div>
+        </div>
           <!-- <OneNgo :list='list' /> -->
         </div>
         <div>
+          <h1>Add your NGO</h1>
           <form @submit="createlist">
             <label>Name of Your NGO</label>
             <input placeholder="Name" v-model='newlist.name'/>
@@ -28,6 +36,7 @@
             <button>Add</button>
             </form>
         </div>
+    </div>
     </div>
   </template>
   

@@ -6,7 +6,7 @@
       <h2>{{donation.typeof}}</h2>
       <h2>{{donation.description}}</h2>
       
-      <form @submit="changeDonation">
+      <!-- <form @submit="changeDonation">
             <label>Name</label>
             <input placeholder="name" v-model='name'  @input='handleChange'/>
             <label>Title</label>
@@ -16,7 +16,7 @@
             <label>Description</label>
             <input placeholder="description" v-model='description' @input='handleChange' />
             <button>Change</button>
-        </form>
+        </form> -->
       <button @click="deleteDonation">Delete</button>
     </div>
   </template>
@@ -46,12 +46,12 @@ import axios from 'axios';
             console.log(res.data);
             this.$router.push("/donations/");
         },
-        async changeDonation() {
-            const donId = parseInt(this.$route.params.donations_id);
-            const res = await axios.put(`${BASE_URL}/donations/${donId}`);
-            console.log(res);
-            //this.form=res.data
-        }
+        // async changeDonation() {
+        //     const donId = parseInt(this.$route.params.donations_id);
+        //     const res = await axios.put(`${BASE_URL}/donations/${donId}`);
+        //     console.log(res);
+        //     //this.form=res.data
+        // }
         
     },
     mounted: async function () {

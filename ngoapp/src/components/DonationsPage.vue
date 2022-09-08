@@ -1,15 +1,16 @@
 <template>
+  <div  class="bg-cover bg-gradient-to-r from-lime-500 via-lime-800 to-lime-700">
     <div>
-        <h1>Donations</h1>
+        <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-white">Donations</h1>
     </div>
-    <div v-for="donation in donations" :key="donation.id" >
-      <h2 @click='selectdonation(donation.id)'>{{donation.name}}</h2>
-      <img :src='donation.title'/>
-      <h2>{{donation.typeof}}</h2>
-      <h2>{{donation.description}}</h2>
+    <div v-for="donation in donations" :key="donation.id" class="py-12">
+      <h2  class="text-left text-4xl font-normal leading-normal mt-0 mb-2 text-white">{{donation.name}}</h2>
+      <h2 class="text-left text-3xl font-normal leading-normal mt-0 mb-2 text-white">{{donation.typeof}}</h2>
+      <img :src='donation.title'  class="float-right max-w-sm h-auto transition-shadow ease-in-out duration-600 shadow-none hover:shadow-xl" @click='selectdonation(donation.id)'/>
+      <h2 class="text-left text-2xl font-normal leading-normal mt-0 mb-2 text-white">{{donation.description}}</h2>
       <button @click="gotobank()">Donate</button>
     </div>
-    
+  </div>
     
   </template>
   

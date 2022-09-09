@@ -17,6 +17,7 @@ To unite NGOs worldwide in support of the Universal Declaration of Human Rights,
 To give greater voice to smaller NGOs beyond their national borders, including NGOs from developing countries and countries with economies in transition; and
         </h4>
     </div>
+    
   </template>
   
   <script>

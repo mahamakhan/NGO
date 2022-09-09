@@ -1,12 +1,14 @@
 <template>
-    <div>
-        <h1>Bank Account</h1>
+    <div class="bg-auto bg-gradient-to-l from-cyan-300 via-blue-700 to-sky-400">
+      <div>
+        <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-white">Bank Accounts</h1>
     </div>
-    <div v-for="bank in banks" :key="bank.id">
-    <h2>{{bank.name}}</h2>
-    <h2>{{bank.iban}}</h2>
-    <h2>{{bank.number}}</h2>
+    <div  class=" py-20" v-for="bank in banks" :key="bank.id">
+    <h2 class="text-center text-left text-3xl font-normal leading-normal mt-0 mb-2 text-white">Bank Name:{{bank.name}}</h2>
+    <h2 class="text-center text-left text-2xl font-normal leading-normal mt-0 mb-2 text-white">IBAN:{{bank.iban}}</h2>
+    <h2 class="text-center text-left text-2xl font-normal leading-normal mt-0 mb-2 text-white">Account Number:{{bank.number}}</h2>
     </div>
+  </div>
   </template>
   
   <script>

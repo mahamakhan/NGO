@@ -1,8 +1,8 @@
 <template>
-    <div  class="h-screen bg-gradient-to-r from-amber-500 via-yellow-700 to-yellow-900">
-        <h1>About</h1>
+    <div  class="bg-auto bg-gradient-to-r from-amber-500 via-yellow-700 to-yellow-900">
+        <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-white">About</h1>
         <img src="../bg.png"/>
-        <h4>
+        <h4 class="text-center text-left text-3xl font-normal leading-normal mt-0 mb-2 text-white">
           Mission
 The World Association of Non-Governmental Organizations is a global organization whose mission is to serve its member organizations, strengthen and encourage the non-governmental sector as a whole, increase public understanding of the non-governmental community, and provide the mechanism and support needed for NGOs to connect, partner, and multiply their contributions to solve humanity's basic problems.
 

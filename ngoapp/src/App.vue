@@ -14,28 +14,24 @@
   <OneNgo/>
   <NgoList/> -->
 </main>
+<footer>
+  <FooterComp/>
+</footer>
 </div>
 </template>
 
 <script type="text/javascript">
-// import BankAccount from './components/BankAccount.vue';
-// import DonationsPage from './components/DonationsPage.vue';
-// import HomePage from './components/HomePage.vue';
-// import OneDonation from './components/OneDonation.vue';
-// import OneNgo from './components/OneNgo.vue';
+
 import NavBar from './components/NavBar.vue';
-// import NgoList from './components/NgoList.vue';
+import FooterComp from './components/FooterComp.vue';
+
 
 export default {
   name: 'App',
  components: {
-//     BankAccount,
-//     DonationsPage,
-//     HomePage,
-//     OneDonation,
-//     OneNgo,
-    NavBar
-//     NgoList
+ 
+    NavBar,
+    FooterComp
 }
 }
 </script>

@@ -8,26 +8,28 @@
     <h2 class="text-center text-left text-2xl font-normal leading-normal mt-0 mb-2 text-white">IBAN:{{bank.iban}}</h2>
     <h2 class="text-center text-left text-2xl font-normal leading-normal mt-0 mb-2 text-white">Account Number:{{bank.number}}</h2>
     </div>
+   
   </div>
   </template>
   
   <script>
     import axios from 'axios'
     import { BASE_URL } from '@/globals';
+
     export default {
-      name: 'BankAccount',
-      data: () =>({
-        banks:[]
-      }),
-      mounted: async function () {
+    name: "BankAccount",
+    data: () => ({
+        banks: []
+    }),
+    mounted: async function () {
         await this.getbank();
-      },
-      methods:{
-        async getbank(){
-          const res= await axios.get(`${BASE_URL}/bankaccount/`)
-          this.banks=res.data
-          console.log(res.data+ 'getbank')
+    },
+    methods: {
+        async getbank() {
+            const res = await axios.get(`${BASE_URL}/bankaccount/`);
+            this.banks = res.data;
+            console.log(res.data + "getbank");
         }
-      }
     }
+}
   </script>

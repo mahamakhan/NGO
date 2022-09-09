@@ -10,5 +10,5 @@ urlpatterns = [
     path('ngolist/<int:pk>', views.NgoDetail.as_view(), name='ngo_detail'),
     path('donations/<int:pk>', views.DonationsDetail.as_view(), name="donation_detail"),
     path('bankaccount/<int:pk>', views.BankDetail.as_view(), name="bank_detail")
-
+    
 ]

@@ -1,6 +1,8 @@
 <template>
     <div  class="bg-auto bg-gradient-to-r from-amber-500 via-yellow-700 to-yellow-900">
-        <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-white">About</h1>
+      <h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-white">About</h1>
+      <div class="flex flex-wrap justify-center">
+      
         <img src="../bg.png"/>
         <h4 class="text-center text-left text-3xl font-normal leading-normal mt-0 mb-2 text-white">
           Mission
@@ -16,6 +18,7 @@ To serve its member organizations by acting as their advocate and spokesman at t
 To unite NGOs worldwide in support of the Universal Declaration of Human Rights, with particular emphasis on promoting (a) human dignity, as outlined in Article 1, (b) tolerance, as outlined in Article 2, (c) the family, as outlined in Article 16, and (d) religious freedom, as outlined in Article 18;
 To give greater voice to smaller NGOs beyond their national borders, including NGOs from developing countries and countries with economies in transition; and
         </h4>
+      </div>
     </div>
     
   </template>

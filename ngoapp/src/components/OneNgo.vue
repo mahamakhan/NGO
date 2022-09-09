@@ -9,7 +9,7 @@
           <h2 class="text-5xl font-normal leading-normal mt-0 mb-2 text-white pb-14">Local/International:{{ngoDetails.international}}</h2>
           <h2 class="text-5xl font-normal leading-normal mt-0 mb-2 text-white pb-14">Contact:{{ngoDetails.email}}</h2>
     </div>
-    <button  class="text-red-900 border border-red-380 hover:bg-red-400 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Remove</button>
+    <button @click="deletelist()" class="text-red-900 border border-red-380 hover:bg-red-400 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Remove</button>
     <div class="flex items-center border-b border-teal-500 py-2">
      
       <form @submit="changelist">
@@ -66,8 +66,12 @@
         response => {
         this. newlist= response.data;
           console.log(this.newlist)})
-      }
+      },
+      async deletelist(){
+        const ngoId= parseInt(this.$route.params.list_id)
+        await axios.delete(`${BASE_URL}/ngolist/${ngoId}`)
+        this.$router.push("/ngolist/")
     }
-      
+  }
     }
   </script>

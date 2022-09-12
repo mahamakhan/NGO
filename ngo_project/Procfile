@@ -1,0 +1,2 @@
+# Replace ngo_project with your project root name:
+web: gunicorn example_django.wsgi

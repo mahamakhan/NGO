@@ -6,13 +6,12 @@
     </header>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
    <main>
-      <router-view></router-view>
-  <!-- <BankAccount/>
-  <DonationsPage/>
-  <HomePage/>
-  <OneDonation/>
-  <OneNgo/>
-  <NgoList/> -->
+      <router-view v-slot="{ Component }">
+        <transition name="slide" mode="out-in">
+    <component :is="Component" :key="$route.path"/>
+  </transition>
+</router-view>
+  
 </main>
 <footer>
   <FooterComp/>
@@ -38,12 +37,23 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Combo', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  
 }
+  .slide-enter-active,
+  .slide-leave-active{
+    transition: opacity 1s, transform 1s;
+  }
+  .slide-enter-from,
+  .slide-leave-to{
+    opacity: 0;
+    transform: translateX(-30%)
+  }
+
+
+
 </style>

@@ -34,7 +34,11 @@ class DonationsSerializer(serializers.HyperlinkedModelSerializer):
         # many=True,
         read_only=True
     )
+    ngo_id=serializers.PrimaryKeyRelatedField(
+        queryset=NgoList.objects.all(),
+        source='ngo_list'
+    )
     class Meta:
        model = Donations
-       fields = ('name','title','typeof', 'description', 'bank','ngo_list', 'id')
+       fields = ('name','title','typeof', 'description', 'bank','ngo_list', 'id', 'ngo_id')
 

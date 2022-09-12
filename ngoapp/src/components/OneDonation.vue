@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-auto h-screen bg-gradient-to-r from-lime-500 via-lime-800 to-lime-700">
+    <div class="bg-auto h-screen bg-gradient-to-r from-lime-500 via-lime-800 to-lime-700 ">
       
-     <h1 class="text-center text-5xl font-normal leading-normal mt-0 mb-2 text-white py-10">{{donation.name}}</h1>
+     <h1 class="text-center text-5xl font-normal leading-normal mt-0 mb-2 text-white py-10 font-bold">{{donation.name}}</h1>
      <img :src='donation.title'  class="float-left w-600 h-715 transition-shadow ease-in-out duration-600 shadow-none hover:shadow-xl"/>
       <h2 class="text-left text-4xl font-normal leading-normal mt-0 mb-2 text-white">Reason:{{donation.typeof}}</h2>
       <h2 class="text-left text-2xl font-normal leading-normal mt-0 mb-2 text-white">{{donation.description}}</h2>
@@ -31,7 +31,8 @@ import axios from 'axios';
     export default {
     name: "OneDonation",
     data: () => ({
-        donation: {}
+        donation: {},
+        ngo:''
     }),
     methods: {
         async getDonationDets() {
@@ -46,16 +47,17 @@ import axios from 'axios';
             console.log(res.data);
             this.$router.push("/donations/");
         },
-        // async changeDonation() {
-        //     const donId = parseInt(this.$route.params.donations_id);
-        //     const res = await axios.put(`${BASE_URL}/donations/${donId}`);
-        //     console.log(res);
-        //     //this.form=res.data
-        // }
+        
+    // async ngoDetail(){
+    //   const res= await axios.get(`${BASE_URL}/ngolist/${this.donation.ngo_id}`)
+    //   this.ngo=res.data
+    // }
+      
         
     },
     mounted: async function () {
         await this.getDonationDets();
+        
     }
 }
   </script>

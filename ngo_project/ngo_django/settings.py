@@ -23,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY= 'django-insecure-kaf%0=-cbbtk_a9s6pq#7z&k%57gr!2j8!0i0@uixw19up*rdn'
+SECRET_KEY = os.environ['SECRET_KEY']
+print(SECRET_KEY)
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = True if os.environ['MODE'] == 'dev' else False
 
 ALLOWED_HOSTS = ['*']
 
@@ -92,16 +93,18 @@ WSGI_APPLICATION = 'ngo_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ngo',
+#         'USER': 'ngouser',
+#         'PASSWORD': 'ngo',
+#         'HOST': 'localhost'
+#     }
+# }
 DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ngo',
-        'USER': 'ngouser',
-        'PASSWORD': 'ngo',
-        'HOST': 'localhost'
-    }
+  'default': dj_database_url.config(conn_max_age=600)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -141,7 +144,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT=os.path.join(BASE_DIR, "static/")

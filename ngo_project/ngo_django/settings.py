@@ -1,5 +1,5 @@
 import os
-import dj_database_url
+
 """
 Django settings for ngo_django project.
 
@@ -44,8 +44,10 @@ INSTALLED_APPS = [
     'ngo',
     'rest_framework',
     "corsheaders",
+    'dj-database-url'
 ]
 
+import dj_database_url
 
 CORS_ORIGIN_ALLOW_ALL = True
 

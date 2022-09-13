@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ['SECRET_KEY']
-
+# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY= 'django-insecure-kaf%0=-cbbtk_a9s6pq#7z&k%57gr!2j8!0i0@uixw19up*rdn'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ['MODE'] == 'dev' else False
+DEBUG = True 
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,14 +43,10 @@ INSTALLED_APPS = [
     'ngo',
     'rest_framework',
     "corsheaders",
-    'gunicorn',
-    'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
-
 ]
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 REST_FRAMEWORK = {
@@ -102,15 +98,10 @@ DATABASES = {
         'NAME': 'ngo',
         'USER': 'ngouser',
         'PASSWORD': 'ngo',
-        'HOST': 'localhost',
-        'PORT':'',
-        
+        'HOST': 'localhost'
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
-WHITENOISE_USE_FINDERS = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -149,8 +140,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR, "static/")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

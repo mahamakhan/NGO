@@ -1,2 +1,2 @@
-
-web: gunicorn ngo_django.wsgi --log-file -
+release: python manage.py migrate
+web: gunicorn grow_django.wsgi --preload

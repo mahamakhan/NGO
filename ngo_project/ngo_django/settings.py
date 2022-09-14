@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'ngo',
     'rest_framework',
     "corsheaders",
-   
 ]
 
 

@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn grow_django.wsgi --log-file -
+web: gunicorn ngo_django.wsgi --log-file -

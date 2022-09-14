@@ -1,2 +1,2 @@
 
-web: gunicorn ngo_django.wsgi
+web: gunicorn ngo_django.wsgi --log-file -

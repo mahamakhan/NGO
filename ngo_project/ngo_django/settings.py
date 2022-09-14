@@ -1,5 +1,5 @@
 import os
-# import dj_database_url
+import dj_database_url
 """
 Django settings for ngo_django project.
 
@@ -44,9 +44,8 @@ INSTALLED_APPS = [
     'ngo',
     'rest_framework',
     "corsheaders",
-  
+   
 ]
-
 
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -95,20 +94,18 @@ WSGI_APPLICATION = 'ngo_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ngo',
-        'USER': 'ngouser',
-        'PASSWORD': 'ngo',
-        'HOST': 'localhost'
-    }
-}
-
-
 # DATABASES = {
-#   'default': dj_database_url.config(conn_max_age=600)
+#      'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ngo',
+#         'USER': 'ngouser',
+#         'PASSWORD': 'ngo',
+#         'HOST': 'localhost'
+#     }
 # }
+DATABASES = {
+  'default': dj_database_url.config(conn_max_age=600)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

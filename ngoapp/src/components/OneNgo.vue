@@ -12,7 +12,7 @@
     <button @click="deletelist()" class="text-red-900 border border-red-380 hover:bg-red-400 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Remove</button>
     <div class="flex items-center border-b border-teal-500 py-2">
      
-      <form @submit="changelist">
+      <form >
             <label>Name of Your NGO:</label>
             <input class="text-center appearance-none bg-transparent border-dotted border-2 border-white w-60 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Name" v-model='newlist.name'/>
             <label>Country:</label>
@@ -25,7 +25,7 @@
             <input class="text-center appearance-none bg-transparent border-dotted border-2 border-white w-60 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="international"  v-model='newlist.international'/>
             <label>Logo/Video</label>
             <input class="text-center appearance-none bg-transparent border-dotted border-2 border-white w-60 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="profit/nonprofit"  v-model='newlist.profit'/>
-            <button  class="text-red-900 border border-red-380 hover:bg-red-400 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Edit</button>
+            <button @click="changelist" class="text-red-900 border border-red-380 hover:bg-red-400 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Edit</button>
             </form>
 
     </div>
@@ -64,7 +64,8 @@
         const ngoId= parseInt(this.$route.params.list_id)
         await axios.put(`${BASE_URL}/ngolist/${ngoId}`,this.newlist).then(
         response => {
-        this. newlist= response.data;
+        this. ngoDetails= response.data;
+          console.log('clicked')
           console.log(this.newlist)})
       },
       async deletelist(){
